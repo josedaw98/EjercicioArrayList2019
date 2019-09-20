@@ -1,18 +1,13 @@
-package com.jose.arrayList.inicio;
+package com.jose.arrayList.beans;
 
 public class Persona {
 
-	private String nombre, apellidos, ciudad;
-	private int telefono, edad , peso;
+	private String nombre, apellidos, ciudad ,telefono;
+	private int edad , peso;
 
-	public Persona(String nombre, String apellidos, String ciudad, int telefono , int edad, int peso) {
+	public Persona() {
 
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.ciudad = ciudad;
-		this.telefono = telefono;
-		this.edad = edad;
-		this.peso = peso;
+		
 	}
 
 	public int getEdad() {
@@ -45,11 +40,11 @@ public class Persona {
 		this.ciudad = ciudad;
 	}
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
@@ -61,4 +56,15 @@ public class Persona {
 		return apellidos;
 	}
 
+	public void setApellidos(String string) {
+		apellidos = string;
+		
+	}
+
+	public void setNombre(String string) {
+		nombre = string;
+		
+	}
+
 }
+

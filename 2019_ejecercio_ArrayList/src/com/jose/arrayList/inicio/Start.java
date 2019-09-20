@@ -1,24 +1,29 @@
 package com.jose.arrayList.inicio;
 
-import java.util.ArrayList;
+import com.jose.arrayList.beans.Persona;
+import com.jose.arrayList.error.FueraDeRangoException;
+import com.jose.arrayList.negocio.ListaPersonas;
+import com.jose.arrayList.print.ImprimirConsola;
 
 public class Start {
 
 	public static void main(String[] args) {
+
+		Persona persona1 = new Persona();
+
+		persona1.setNombre("maria");
+		persona1.setApellidos("lopes");
+		persona1.setTelefono("638746522");
+		persona1.setCiudad("oviedo");
+		persona1.setEdad(22);
+		persona1.setPeso(81);
+
+		ListaPersonas lista = new ListaPersonas();
+		lista.addPersona(persona1);
+
 		
+		ImprimirConsola.imprirmirListaPersona(lista);	
 		
-		Persona n1 = new Persona("Jose " , "Rojo" , "Oviedo" , 650251743);
-		Persona n2 = new Persona("Carlos " , "Costales" , "Gijon" , 674926483);
-		Persona n3 = new Persona("Pablo" , "Carvajal" , "Aviles" , 763823514);
-		Persona n4 = new Persona("Alvaro" , "Roces" , "Oviedo" , 957452736);
-		
-		MiLista Metodos =  new MiLista();
-		MiLista.addPersona(n1);
-		MiLista.addPersona(n2);
-		MiLista.addPersona(n3);
-		MiLista.addPersona(n4);
-		
-		ImprimirConsola imprimir = new ImprimirConsola(MiLista.getPersonas());
 	}
 
 	
