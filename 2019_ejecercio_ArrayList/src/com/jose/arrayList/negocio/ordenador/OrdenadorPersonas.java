@@ -8,7 +8,7 @@ public class OrdenadorPersonas implements Comparator<Persona> {
 	/*
 	 * CRITERIO ASCENDENTE Y DESCENDENTE
 	 * 
-	 * ASCENDENTE = 1; DESCENDENTE = 2: DEFECTO = ASCENDENTE;
+	 * ASCENDENTE = 10; DESCENDENTE = 20: DEFECTO = ASCENDENTE;
 	 * 
 	 * 
 	 */
@@ -20,7 +20,7 @@ public class OrdenadorPersonas implements Comparator<Persona> {
 
 		switch (criterio) {
 
-		case 1:
+		case 10:
 			if (p1.getEdad() == p2.getEdad()) {
 
 				return p1.getPeso() - p2.getPeso();
@@ -28,7 +28,7 @@ public class OrdenadorPersonas implements Comparator<Persona> {
 				return p1.getEdad() - p2.getEdad();
 			}
 
-		case 2:
+		case 20:
 			if (p2.getEdad() == p1.getEdad()) {
 
 				return p2.getPeso() - p1.getPeso();
@@ -50,12 +50,12 @@ public class OrdenadorPersonas implements Comparator<Persona> {
 
 	public void ordenarAsce() {
 
-		criterio = 1;
+		criterio = 10;
 	}
 
 	public void ordenarDesc() {
 
-		criterio = 2;
+		criterio = 20;
 	}
 
 	/*
