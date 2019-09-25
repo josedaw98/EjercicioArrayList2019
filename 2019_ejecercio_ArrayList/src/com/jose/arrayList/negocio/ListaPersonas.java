@@ -5,68 +5,79 @@ import java.util.Iterator;
 
 import com.jose.arrayList.beans.Persona;
 import com.jose.arrayList.error.FueraDeRangoException;
+import com.jose.arrayList.negocio.ordenador.OrdenadorPersonas;
 
 public class ListaPersonas {
-	
-	//Usaremos un ArrayList internamente para funcionar
-	private ArrayList listaInterna;
-	
+
+	// Usaremos un arrayList internamente para funcionar
+	// private ArrayList<Persona> listaInterna;
+	private ArrayList<Persona> listaInterna;
+
 	public ListaPersonas() {
+
 		listaInterna = new ArrayList<Persona>();
 	}
-	
+
 	/**
-	 * esta operacion introduce un objeto persona en la 
-	 * lista de personas
-	 * @param persona Persona e insertar
+	 * Esta operacion introduce un objeto Persona en la ListaPersonas
+	 * 
+	 * @param persona Persona a insertar
 	 */
-	
 	public void addPersona(Persona persona) {
-		
-		//uso la lista interna y me ayudo de ella 
+
+		// uso la lista interna y me ayudo de ella
 		listaInterna.add(persona);
-		
 	}
-	
+
 	/**
-	 * tamaño de la lista
+	 * Tamaño de la lista
 	 * 
-	 * @return el numero de elementos que posee la lista 
+	 * @return el numero de elementos que posee la lista
 	 */
-	
 	public int getElementos() {
-		
-		//devuelvo el tamaño de la lista
+
+		// devuelvo el tamanio de la lista
 		return listaInterna.size();
-		
 	}
-	
+
 	/**
-	 * Recoge la persona indicada por el indice
+	 * Recoge la Persona indicada por el índice
 	 * 
-	 * @param index la posicion de la persona solicitada
-	 * @return el obejto persona en esa posicion
-	 * @throws Exception FueraDeRangoException error producido 
+	 * @param index la posición de la Persona solicitada
+	 * @return El objeto Persona en esa posición
+	 * @throws FueraDeRangoException error producido
 	 */
-	
-	
-	public Persona getPersona(int index) throws Exception {
-		
+	public Persona getPersona(int index) throws FueraDeRangoException {
+
 		if ((index >= 0) && (index < listaInterna.size())) {
-			
-		
-		return  (Persona) listaInterna.get(index);
-		
+
+			return listaInterna.get(index);
 		}
-		
-		throw new FueraDeRangoException("te has equivocado en el tamaño");
-		
+
+		throw new FueraDeRangoException("Te has colado en el tamaño");
+
 	}
-	
-	public Iterator<Persona> getPersonas(){
+
+	/**
+	 * Devuelve un iterador sobre los elementos de la lista
+	 * 
+	 * @return el iterador para poder recorrer la lista
+	 */
+	public Iterator<Persona> getPersonas() {
+
 		return listaInterna.iterator();
-		
-		
+
+	}
+
+	/**
+	 * Ordenador de la lista que necesita un Comparator para poder ordenadarse
+	 * 
+	 * @param op Ordenador de personas que implementa el Comparator de java
+	 */
+	public void ordenarEdad(OrdenadorPersonas op) {
+
+		listaInterna.sort(op);
+
 	}
 
 }
