@@ -1,11 +1,13 @@
 package com.jose.arrayList.negocio;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 
 import com.jose.arrayList.beans.Persona;
 import com.jose.arrayList.error.FueraDeRangoException;
 import com.jose.arrayList.negocio.ordenador.OrdenadorPersonas;
+import com.jose.arryList.negocio.ordenador.OrdenadorAscendenteDescendente;
 
 public class ListaPersonas {
 
@@ -74,10 +76,13 @@ public class ListaPersonas {
 	 * 
 	 * @param op Ordenador de personas que implementa el Comparator de java
 	 */
-	public void ordenarEdad(OrdenadorPersonas op) {
 
+
+	
+
+	public void ordenar(Comparator<Persona> op) {
 		listaInterna.sort(op);
-
+		
 	}
 
 }

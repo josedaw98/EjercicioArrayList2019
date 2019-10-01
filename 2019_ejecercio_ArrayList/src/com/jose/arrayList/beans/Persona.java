@@ -49,9 +49,7 @@ public class Persona {
 	public void setEdad(int edad) {
 		this.edad = edad;
 	}
-	public int Edad() {
-		return peso;
-	}
+
 	public void setPeso(int peso) {
 		this.peso = peso;
 	}
@@ -64,7 +62,7 @@ public class Persona {
 	}
 	public int getPeso() {
 		// TODO Auto-generated method stub
-		return 0;
+		return peso;
 	}
 	
 	

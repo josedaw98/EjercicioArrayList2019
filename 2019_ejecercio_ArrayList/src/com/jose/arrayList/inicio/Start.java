@@ -6,6 +6,7 @@ import com.jose.arrayList.beans.Persona;
 import com.jose.arrayList.error.FueraDeRangoException;
 import com.jose.arrayList.negocio.ListaPersonas;
 import com.jose.arrayList.print.ImprimirConsola;
+import com.jose.arryList.negocio.ordenador.OrdenadorAscendenteDescendente;
 import com.jose.arrayList.negocio.ordenador.OrdenadorPersonas;
 
 public class Start {
@@ -46,18 +47,17 @@ public class Start {
 
 		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
 
-		OrdenadorPersonas op = new OrdenadorPersonas();
+		OrdenadorAscendenteDescendente oad = new OrdenadorAscendenteDescendente();
 
 		//op.ordenatePeso();
-		
-		lista.ordenarEdad(op);
-
+		oad.setMetodoEdad(OrdenadorAscendenteDescendente.ORDENACION_DESCENDENTE);
+		oad.setMetodoPeso(OrdenadorAscendenteDescendente.ORDENACION_DESCENDENTE);
+		lista.ordenar(oad);
 		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
 		
-		op.ordenarDesc();
-		lista.ordenarEdad(op);
-		
-		
+		oad.setMetodoEdad(OrdenadorAscendenteDescendente.ORDENACION_ASCENDENTE);
+		oad.setMetodoPeso(OrdenadorAscendenteDescendente.ORDENACION_ASCENDENTE);
+		lista.ordenar(oad);
 		ImprimirConsola.imprimirListaPersonas(lista.getPersonas());
 //		
 //		op.ordenateEdad();
